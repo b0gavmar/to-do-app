@@ -5,13 +5,9 @@ import HelloWorld from './components/HelloWorld.vue'
 
 <template>
   <header>
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
-    </div>
+    <h2>To Do App</h2>
+    <RouterLink to="/">Home</RouterLink>
+    <RouterLink to="/tasks">Tasks</RouterLink>
   </header>
 
   <RouterView />
