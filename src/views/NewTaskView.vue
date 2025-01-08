@@ -1,17 +1,6 @@
 <template>
   <div class="container">
-    <div v-for="t in taskStore.tasks" :key="t.id" class="task">
-      <h3>{{ t.title }}</h3>      
-      <div>
-        <p>{{ t.desc }}</p>
-        <p v-if="t.isFinished">Státusz: Kész</p>
-        <p v-else>Státusz: Nincs kész</p>
-      </div>
-      <div class="footer">
-        <button @click="editTask(t.id)">Edit</button>
-      </div>
-
-    </div>
+    <div>a</div>
   </div>
 </template>
 
@@ -34,14 +23,14 @@
 <script setup>
 import {ref} from 'vue'
 import { useTaskStore } from '@/stores/tasks';
-import { useRouter } from 'vue-router';
+import { useRoute, useRouter } from 'vue-router';
 
 const taskStore = useTaskStore();
 
-const route = useRouter();
+const route = useRoute();
 
 const editTask = (id) =>{
-  route.push(`./edittask/${id}`);
+  route.push(`.edittask/${id}`);
 }
 
 </script>

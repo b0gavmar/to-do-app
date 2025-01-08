@@ -6,8 +6,8 @@ import { RouterLink, RouterView } from 'vue-router'
   <header>
     <h2>To Do App</h2>
     <nav>
-      <RouterLink to="/">Home</RouterLink>
       <RouterLink to="/tasks">Tasks</RouterLink>
+      <RouterLink to="/newtask">New Task</RouterLink>
     </nav>
   </header>
 
