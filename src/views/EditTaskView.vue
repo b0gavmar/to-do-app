@@ -1,6 +1,7 @@
 <template>
   <div class="container">
-    <div>a</div>
+    <p> {{ route.params.id }}</p>
+    <p>{{ task.title }}</p>
   </div>
 </template>
 
@@ -21,17 +22,18 @@
 </style>
 
 <script setup>
-import {ref} from 'vue'
-import { useTaskStore } from '@/stores/tasks';
-import { useRoute, useRouter } from 'vue-router';
+  import { ref, onMounted } from 'vue';
+  import { useRoute } from 'vue-router';
+  import { useTaskStore } from '@/stores/tasks';
 
-const taskStore = useTaskStore();
+  const route = useRoute();
+  const tasksStore = useTaskStore();
+  const task = ref();
 
-const route = useRoute();
+  onMounted ( ()=>{
+    task.value = tasksStore.value.find(t => t.id == route.params.id);
+  });
 
-const editTask = (id) =>{
-  route.push(`.edittask/${id}`);
-}
 
 </script>
 
