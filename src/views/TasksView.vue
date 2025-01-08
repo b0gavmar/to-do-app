@@ -8,7 +8,7 @@
         <p v-else>Státusz: Nincs kész</p>
       </div>
       <div class="footer">
-        <p>asd</p>
+        <button @click="editTask(t.id)">Edit</button>
       </div>
 
     </div>
@@ -21,11 +21,13 @@
     flex-wrap: wrap;
     gap: 5px;
     color: white;
+    justify-content: center;
+    margin-top: 20px;
   }
 .task{
   background-color: rgb(49, 49, 49);
   border-radius: 14px;
-  padding: 8px;
+  padding: 10px;
 }
 </style>
 
@@ -37,6 +39,10 @@ import { useRoute, useRouter } from 'vue-router';
 const taskStore = useTaskStore();
 
 const route = useRoute();
+
+const editTask = (id) =>{
+  route.push(`.edittask/${id}`);
+}
 
 </script>
 

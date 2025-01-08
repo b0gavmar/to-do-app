@@ -21,9 +21,5 @@ export const useTaskStore = defineStore('task', () => {
       }
   ]);
 
-  function addTask() {
-    
-  }
-
-  return { tasks, addTask }
+  return { tasks}
 })
