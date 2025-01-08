@@ -14,9 +14,7 @@ export const useTaskStore = defineStore('task', () => {
   ]);
 
   function addTask() {
-    const tmp = madarak.value.find((x) => x.id==id);
-    tmp.szavazat = tmp.szavazat+1 || 1;
-    console.log(madar.value);
+    
   }
 
   return { tasks }
