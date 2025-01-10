@@ -22,14 +22,10 @@ header {
 
 header{
   color: rgb(47, 223, 85); 
-  background-color: rgb(22, 22, 22);
+  background-color: rgb(34, 34, 34);
   text-decoration: none;
   border-radius: 20px;
   padding: 10px;
-}
-
-body{
-  font-family:serif;
 }
 
 .logo {
@@ -38,7 +34,8 @@ body{
 }
 
 a:link, a:visited{
-  color: rgb(47, 223, 85);
+  color: rgb(140, 218, 157);
+  text-decoration: none;
 }
 
 a:hover{
@@ -47,7 +44,7 @@ a:hover{
 
 nav {
   width: 100%;
-  font-size: 12px;
+  font-size: 20px;
   text-align: center;
   margin-top: 2rem;
 }

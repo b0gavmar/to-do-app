@@ -2,9 +2,10 @@
   <div class="container">
     <div class="task">
       <h2> {{ task.title }} </h2>
-      <p> {{ task.desc }} </p>
-      <p> {{ task.isFinished }}</p>
-      <p> {{ task.deadline }}</p>
+      <p>Leírás {{ task.desc }} </p>
+      <p> {{ task.isFinished }} </p>
+      <p> {{ task.deadline }} </p>
+      <button> save </button>
     </div>
   </div>
 </template>
@@ -19,9 +20,7 @@
   margin-top: 20px;
 }
 
-body {
-  font-family: serif;
-}
+
 
 .task {
   background-color: rgb(49, 49, 49);

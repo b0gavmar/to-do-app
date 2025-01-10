@@ -28,10 +28,10 @@
   background-color: rgb(49, 49, 49);
   border-radius: 14px;
   padding: 10px;
+  width: 160px;
+  height: 160px;
 }
-body {
-  font-family: serif;
-}
+
 </style>
 
 <script setup>
