@@ -20,9 +20,29 @@ header {
   max-height: 100vh;
 }
 
+header{
+  color: rgb(47, 223, 85); 
+  background-color: rgb(22, 22, 22);
+  text-decoration: none;
+  border-radius: 20px;
+  padding: 10px;
+}
+
+body{
+  font-family:serif;
+}
+
 .logo {
   display: block;
   margin: 0 auto 2rem;
+}
+
+a:link, a:visited{
+  color: rgb(47, 223, 85);
+}
+
+a:hover{
+  color: rgb(230, 193, 28);
 }
 
 nav {

@@ -29,6 +29,9 @@
   border-radius: 14px;
   padding: 10px;
 }
+body {
+  font-family: serif;
+}
 </style>
 
 <script setup>
@@ -41,6 +44,8 @@ const taskStore = useTaskStore();
 const route = useRouter();
 
 const editTask = (id) =>{
+  console.log(id);
+  
   route.push(`./edittask/${id}`);
 }
 

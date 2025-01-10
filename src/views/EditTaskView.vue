@@ -1,38 +1,48 @@
 <template>
   <div class="container">
-    <p> {{ route.params.id }}</p>
-    <p>{{ task.title }}</p>
+    <div class="task">
+      <h2> {{ task.title }} </h2>
+      <p> {{ task.desc }} </p>
+      <p> {{ task.isFinished }}</p>
+      <p> {{ task.deadline }}</p>
+    </div>
   </div>
 </template>
 
 <style scoped>
-.container{
-    display: flex;
-    flex-wrap: wrap;
-    gap: 5px;
-    color: white;
-    justify-content: center;
-    margin-top: 20px;
-  }
-.task{
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  color: white;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+body {
+  font-family: serif;
+}
+
+.task {
   background-color: rgb(49, 49, 49);
   border-radius: 14px;
   padding: 10px;
+  width: 80%;
+  max-width: 1000px;
 }
 </style>
 
 <script setup>
-  import { ref, onMounted } from 'vue';
-  import { useRoute } from 'vue-router';
+  import { ref} from 'vue';
+  import { useRoute, useRouter } from 'vue-router';
   import { useTaskStore } from '@/stores/tasks';
 
   const route = useRoute();
+  const router = useRouter();
   const tasksStore = useTaskStore();
-  const task = ref();
+  const task = ref(tasksStore.tasks.find(t => t.id == route.params.id));
 
-  onMounted ( ()=>{
-    task.value = tasksStore.value.find(t => t.id == route.params.id);
-  });
+  console.log(task)
 
 
 </script>
