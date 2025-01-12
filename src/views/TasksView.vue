@@ -66,6 +66,7 @@ const editTask = (id) => {
 
 const deleteTask = (id) => {
   taskStore.deleteTask(id);
+  route.push(`./`);
 };
 
 

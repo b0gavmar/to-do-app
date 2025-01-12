@@ -28,7 +28,6 @@
         <br>
         <div>
           <button @click="editTaskInfo" class="btn btn-primary">Feladat mentése</button>
-          <button @click="deleteTask(t.id)" class="btn btn-danger">Törlés</button>
         </div>
     </div>
   </div>
@@ -79,7 +78,7 @@ button{
   const tasksStore = useTaskStore();
   const task = ref(tasksStore.tasks.find(t => t.id == route.params.id));
 
-  const deadlineString = ref(new Date(task.value.deadline));
+  const deadlineString = ref(new Date(task.value.deadline)); 
 
   const currentTask = {
   id: task.value.id,
@@ -90,8 +89,10 @@ button{
   };
 
 const editTaskInfo = () =>{
+  const month = Number(new Date(deadlineString.value).getMonth())+1;
+
   if("NaN.NaN.NaN" != new Date(deadlineString.value).getFullYear()+"."+new Date(deadlineString.value).getMonth()+"."+new Date(deadlineString.value).getDate()){
-    currentTask.deadline = new Date(deadlineString.value).getFullYear()+"."+new Date(deadlineString.value).getMonth()+1+"."+new Date(deadlineString.value).getDate();
+    currentTask.deadline = new Date(deadlineString.value).getFullYear()+"."+(Number(new Date(deadlineString.value).getMonth())+1)+"."+new Date(deadlineString.value).getDate();
   }
   if(currentTask.title.trim != '' && currentTask.desc.trim != '' && currentTask.deadline != NaN){
     console.log('Current Task:', currentTask);
@@ -104,10 +105,6 @@ const editTaskInfo = () =>{
   }
   
 }
-
-const deleteTask = (id) => {
-  taskStore.deleteTask(id);
-};
 
 </script>
 
