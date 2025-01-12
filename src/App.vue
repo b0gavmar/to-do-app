@@ -6,8 +6,8 @@ import { RouterLink, RouterView } from 'vue-router'
   <header>
     <h2>To Do App</h2>
     <nav>
-      <RouterLink to="/tasks">Tasks</RouterLink>
-      <RouterLink to="/newtask">New Task</RouterLink>
+      <RouterLink to="/">Feladatok</RouterLink>
+      <RouterLink to="/newtask">Új feladat</RouterLink>
     </nav>
   </header>
 
@@ -24,7 +24,6 @@ header{
   color: rgb(47, 223, 85); 
   background-color: rgb(34, 34, 34);
   text-decoration: none;
-  border-radius: 20px;
   padding: 10px;
 }
 
