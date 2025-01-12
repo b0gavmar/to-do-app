@@ -78,8 +78,19 @@ const newTask = {
 
 const addNewTask = () =>{
   if("NaN.NaN.NaN" != new Date(deadlineString.value).getFullYear()+"."+new Date(deadlineString.value).getMonth()+"."+new Date(deadlineString.value).getDate()){
-    newTask.deadline = new Date(deadlineString.value).getFullYear()+"."+new Date(deadlineString.value).getMonth()+1+"."+new Date(deadlineString.value).getDate();
-  }
+      if(Number(new Date(deadlineString.value).getMonth())+1 > 9){
+        newTask.deadline = new Date(deadlineString.value).getFullYear()+"."+(Number(new Date(deadlineString.value).getMonth())+1);
+      }
+      else{
+        newTask.deadline = new Date(deadlineString.value).getFullYear()+".0"+(Number(new Date(deadlineString.value).getMonth())+1);
+      }
+      if(new Date(deadlineString.value).getDate() > 9){
+        newTask.deadline += "."+new Date(deadlineString.value).getDate();
+      }
+      else{
+        newTask.deadline += ".0"+new Date(deadlineString.value).getDate();
+      }
+    }
   if(newTask.id != undefined && newTask.title != undefined && newTask.desc != undefined && newTask.deadline != NaN){
     taskStore.tasks.push(newTask)
     console.log(newTask);

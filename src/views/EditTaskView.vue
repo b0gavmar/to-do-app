@@ -92,8 +92,20 @@ const editTaskInfo = () =>{
   const month = Number(new Date(deadlineString.value).getMonth())+1;
 
   if("NaN.NaN.NaN" != new Date(deadlineString.value).getFullYear()+"."+new Date(deadlineString.value).getMonth()+"."+new Date(deadlineString.value).getDate()){
-    currentTask.deadline = new Date(deadlineString.value).getFullYear()+"."+(Number(new Date(deadlineString.value).getMonth())+1)+"."+new Date(deadlineString.value).getDate();
+    if(Number(new Date(deadlineString.value).getMonth())+1 > 9){
+      currentTask.deadline = new Date(deadlineString.value).getFullYear()+"."+(Number(new Date(deadlineString.value).getMonth())+1);
+    }
+    else{
+      currentTask.deadline = new Date(deadlineString.value).getFullYear()+".0"+(Number(new Date(deadlineString.value).getMonth())+1);
+    }
+    if(new Date(deadlineString.value).getDate() > 9){
+      currentTask.deadline += "."+new Date(deadlineString.value).getDate();
+    }
+    else{
+      currentTask.deadline += ".0"+new Date(deadlineString.value).getDate();
+    }
   }
+
   if(currentTask.title.trim != '' && currentTask.desc.trim != '' && currentTask.deadline != NaN){
     console.log('Current Task:', currentTask);
     tasksStore.tasks[currentTask.id-1] = {...currentTask};
