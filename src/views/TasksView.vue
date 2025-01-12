@@ -10,6 +10,7 @@
       <p> {{ t.deadline }} </p>
       <div class="footer">
         <button @click="editTask(t.id)" class="btn btn-secondary">Szerkesztés</button>
+        <button @click="deleteTask(t.id)" class="btn btn-danger">Törlés</button>
       </div>
 
     </div>
@@ -44,6 +45,9 @@ p, h3{
   background-color: #3f7ff5;
 }
 
+button{
+  margin-right: 5px;
+}
 
 </style>
 
@@ -59,6 +63,10 @@ const route = useRouter();
 const editTask = (id) => {
   route.push(`./edittask/${id}`);
 }
+
+const deleteTask = (id) => {
+  taskStore.deleteTask(id);
+};
 
 
 </script>

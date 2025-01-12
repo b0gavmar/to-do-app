@@ -21,7 +21,7 @@ header {
 }
 
 header{
-  color: rgb(47, 223, 85); 
+  color: #3f7ff5; 
   background-color: rgb(34, 34, 34);
   text-decoration: none;
   padding: 10px;
@@ -33,8 +33,10 @@ header{
 }
 
 a:link, a:visited{
-  color: rgb(140, 218, 157);
+  color: #6294f1;
   text-decoration: none;
+  font-size: larger;
+  font-weight: bolder;
 }
 
 a:hover{

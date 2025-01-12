@@ -28,6 +28,7 @@
         <br>
         <div>
           <button @click="editTaskInfo" class="btn btn-primary">Feladat mentése</button>
+          <button @click="deleteTask(t.id)" class="btn btn-danger">Törlés</button>
         </div>
     </div>
   </div>
@@ -60,6 +61,10 @@ label{
   width: 80%;
   max-width: 400px;
 
+}
+
+button{
+  margin-right: 5px;
 }
 
 </style>
@@ -100,6 +105,9 @@ const editTaskInfo = () =>{
   
 }
 
+const deleteTask = (id) => {
+  taskStore.deleteTask(id);
+};
 
 </script>
 

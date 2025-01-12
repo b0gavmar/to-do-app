@@ -45,14 +45,14 @@
     justify-content: center;
     margin-top: 20px;
   }
-.task{
+
+  .task {
   background-color: rgb(49, 49, 49);
   border-radius: 14px;
   padding: 20px;
-  gap: 10px;
-
+  width: 80%;
+  max-width: 400px;
 }
-
 
 </style>
 
@@ -67,7 +67,6 @@ const router = useRouter();
 
 const deadlineString = ref('');
 
-//console.log(taskStore.tasks.value[taskStore.tasks.length - 1].id)
 
 const newTask = {
   id: taskStore.tasks.length+1,
